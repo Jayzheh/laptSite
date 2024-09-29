@@ -1,49 +1,46 @@
-# LAPT App Terms of Service Website
+# Getting Started with Create React App
 
-This repository contains the Terms of Service website for the LAPT app. It serves as an extension to the main LAPT app, providing a dedicated web interface for displaying the app's terms of service and user settings.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Overview
+## Available Scripts
 
-The LAPT App Terms of Service Website is designed to:
+In the project directory, you can run:
 
-- Display the full terms of service for the LAPT app
-- Provide an accordion-style menu for user settings
-- Offer a web-based interface accessible through the main LAPT app
+### `npm start`
 
-## Features
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- Responsive design for various screen sizes
-- Accordion menu for easy navigation through different sections
-- Integration with the main LAPT app via WebView
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Technology Stack
+### `npm test`
 
-- HTML5
-- CSS3
-- JavaScript
-- Deployed on Vercel
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Development
+### `npm run build`
 
-To run this project locally:
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-1. Clone the repository
-2. Open `index.html` in your browser
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Deployment
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-This website is automatically deployed to Vercel when changes are pushed to the main branch.
+### `npm run eject`
 
-## Related Projects
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-- [LAPT App Repository](https://github.com/yourusername/lapt-app) - Main repository for the LAPT app
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## License
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-[Include your license information here]
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Contact
+## Learn More
 
-[Your Name] - [Your Email]
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Project Link: [https://github.com/yourusername/lapt-site](https://github.com/yourusername/lapt-site)
+To learn React, check out the [React documentation](https://reactjs.org/).
