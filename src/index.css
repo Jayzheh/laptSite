@@ -5,6 +5,11 @@ body {
   padding: 0;
 }
 
+.logo {
+  width: 150;
+  height: 150;
+}
+
 .container {
   display: flex;
   min-height: 100vh;

@@ -1,6 +1,7 @@
 // /Users/danlynmedou/Desktop/laptSite/lapt-site/src/App.tsx
 import React, { useState } from 'react';
-import logo from './logo.png'; // Make sure to add a logo file
+import logo from './logo.png';
+import './App.css';
 
 interface AccordionItemProps {
   title: string;
@@ -10,15 +11,11 @@ interface AccordionItemProps {
 }
 
 const AccordionItem: React.FC<AccordionItemProps> = ({ title, content, isActive, onClick }) => (
-  <div className="accordion-item">
-    <button className={`accordion-header ${isActive ? 'active' : ''}`} onClick={onClick}>
+  <div className={`accordion-item ${isActive ? 'active' : ''}`}>
+    <button className="accordion-header" onClick={onClick}>
       {title}
     </button>
-    {isActive && (
-      <div className="accordion-content">
-        {content}
-      </div>
-    )}
+    {isActive && <div className="accordion-content">{content}</div>}
   </div>
 );
 
@@ -30,60 +27,80 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="container">
-      <header>
-        <img src={logo} alt="LAPT Logo" className="logo" />
-        <h1>LAPT</h1>
+    <div className="app-container">
+      <header className="app-header">
+        <img src={logo} alt="LAPT Logo" className="app-logo" />
+        <h1>LAPT: Your Smart Travel Companion</h1>
       </header>
-      <div className="sidebar">
-        <h2>Settings</h2>
-        <div className="accordion">
-          <AccordionItem 
-            title="Account Settings" 
-            content={
-              <div>
-                <h3>Password Management</h3>
-                <p>Change your password regularly to ensure account security. We recommend using a strong, unique password for your LAPT account.</p>
-                <button>Change Password</button>
-              </div>
-            }
-            isActive={activeSection === 'account'}
-            onClick={() => toggleSection('account')}
-          />
-          <AccordionItem 
-            title="Privacy Settings" 
-            content={
-              <div>
-                <h3>Data Sharing Options</h3>
-                <p>You have the option to share your data with our partners. This helps us improve our services and may provide you with personalized experiences.</p>
-                <label>
-                  <input type="checkbox" /> Allow data sharing
-                </label>
-              </div>
-            }
-            isActive={activeSection === 'privacy'}
-            onClick={() => toggleSection('privacy')}
-          />
-          <AccordionItem 
-            title="Notification Settings" 
-            content="Configure your notification preferences here..."
-            isActive={activeSection === 'notifications'}
-            onClick={() => toggleSection('notifications')}
-          />
-        </div>
-      </div>
-      <div className="main-content">
-        <h2>Terms of Service</h2>
-        <p>Welcome to LAPT. By using our services, you agree to these terms:</p>
-        <ul>
-          <li>You must be at least 13 years old to use LAPT.</li>
-          <li>You are responsible for maintaining the security of your account.</li>
-          <li>We respect your privacy and will protect your personal information as described in our Privacy Policy.</li>
-          <li>You agree not to use LAPT for any illegal or unauthorized purpose.</li>
-          <li>We reserve the right to modify or terminate the service for any reason, without notice, at any time.</li>
-        </ul>
-        <p>For the full Terms of Service, please visit our website.</p>
-      </div>
+      <main className="app-main">
+        <aside className="app-sidebar">
+          <h2>Account Settings</h2>
+          <div className="accordion">
+            <AccordionItem 
+              title="Data Sharing Options" 
+              content={
+                <div>
+                  <p>LAPT offers a unique opportunity to reduce your travel costs by sharing your data. Here's how it works:</p>
+                  <ul>
+                    <li>Opt-in to share your travel patterns and preferences</li>
+                    <li>We anonymize your data and share it with our partners</li>
+                    <li>You earn credits that can be used for ticket discounts</li>
+                  </ul>
+                  <label className="switch">
+                    <input type="checkbox" />
+                    <span className="slider round"></span>
+                  </label>
+                  <span>Enable Data Sharing</span>
+                </div>
+              }
+              isActive={activeSection === 'data'}
+              onClick={() => toggleSection('data')}
+            />
+            <AccordionItem 
+              title="Notification Preferences" 
+              content={
+                <div>
+                  <p>Stay informed about your travels:</p>
+                  <label><input type="checkbox" /> Price alerts</label>
+                  <label><input type="checkbox" /> Schedule changes</label>
+                  <label><input type="checkbox" /> Travel tips</label>
+                </div>
+              }
+              isActive={activeSection === 'notifications'}
+              onClick={() => toggleSection('notifications')}
+            />
+            <AccordionItem 
+              title="Account Security" 
+              content={
+                <div>
+                  <p>Protect your account and travel information:</p>
+                  <button className="btn">Change Password</button>
+                  <button className="btn">Enable Two-Factor Authentication</button>
+                </div>
+              }
+              isActive={activeSection === 'security'}
+              onClick={() => toggleSection('security')}
+            />
+          </div>
+        </aside>
+        <section className="app-content">
+          <h2>Welcome to LAPT</h2>
+          <p>LAPT is your smart travel companion for train and bus journeys. We're committed to making your travel experience seamless, affordable, and rewarding.</p>
+          <h3>Key Features:</h3>
+          <ul>
+            <li>Real-time schedules and updates for trains and buses</li>
+            <li>Easy ticket booking with the best available prices</li>
+            <li>Unique data-sharing option to earn discounts on your travels</li>
+            <li>Personalized travel recommendations based on your preferences</li>
+          </ul>
+          <h3>How Data Sharing Works:</h3>
+          <p>By opting into our data sharing program, you can significantly reduce your travel costs. We anonymize and aggregate your travel data, which helps transportation companies optimize their services. In return, you earn credits for discounts on future tickets.</p>
+          <p>Your privacy and data security are our top priorities. You have full control over what data you share and can opt-out at any time.</p>
+        </section>
+      </main>
+      <footer className="app-footer">
+        <p>&copy; 2024 LAPT. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      </footer>
     </div>
   );
 };
